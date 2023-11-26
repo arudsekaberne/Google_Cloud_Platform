@@ -31,6 +31,6 @@ client.update_table(bigquery_table, fields=['labels'])
 
 # 4. Delete labels of your table
 for key, val in bigquery_table.labels.items():
-  bigquery_table.labels[key] = None
+    bigquery_table.labels[key] = None
 
 client.update_table(bigquery_table, fields=['labels'])
