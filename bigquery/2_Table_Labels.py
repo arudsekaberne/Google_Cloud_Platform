@@ -20,17 +20,17 @@ table_reference     = bigquery.TableReference(
         table_id    = '<table_name>'
     )
 
-postal_code_table   = client.get_table(table_reference)
+bigquery_table      = client.get_table(table_reference)
 
 
 # 3. Create (or) Update label to your table
-postal_code_table.labels = {'country': 'canada', 'category': 'partial_error'}
+bigquery_table.labels = {'country': 'canada', 'category': 'partial_error'}
 
-client.update_table(postal_code_table, fields=['labels'])
+client.update_table(bigquery_table, fields=['labels'])
 
 
 # 4. Delete labels of your table
-for key, val in postal_code_table.labels.items():
-  postal_code_table.labels[key] = None
+for key, val in bigquery_table.labels.items():
+  bigquery_table.labels[key] = None
 
-client.update_table(postal_code_table, fields=['labels'])
+client.update_table(bigquery_table, fields=['labels'])
