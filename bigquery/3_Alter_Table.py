@@ -45,9 +45,9 @@ drop_column_query = client.query('''
     DROP COLUMN IF EXISTS description;
 ''')
 
-query_response = client.query(drop_column_query)
+query_job = client.query(drop_column_query)
 
-while query_response.state != 'DONE':
+while query_job.state != 'DONE':
     print('Waiting for job to finish...')
     sleep(3)
-    query_response.reload()
+    query_job.reload()
