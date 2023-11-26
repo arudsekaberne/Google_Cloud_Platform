@@ -11,7 +11,7 @@ client = bigquery.Client()
 
 # 2. Create reference and table
 dataset_reference   = bigquery.DatasetReference(
-        project     = '<project_id>',
+        project     = client.project,
         dataset_id  = '<dataset_id>'
     )
 
