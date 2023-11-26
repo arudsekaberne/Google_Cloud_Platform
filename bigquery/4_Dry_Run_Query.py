@@ -14,10 +14,7 @@ select_query = "SELECT * FROM <table_identitfier>;"
 
 
 # 3. Configure job
-job_config = bigquery.QueryJobConfig(
-        dry_run = True,
-        use_query_cache = False
-    )
+job_config = bigquery.QueryJobConfig(dry_run = True, use_query_cache = False)
 
 
 # 4. Make an API request
